@@ -9,7 +9,8 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
-
+#include <Mmsystem.h> 
+#pragma comment(lib, "winmm.lib") 
 #pragma comment(lib, "ws2_32.lib")
 
 using namespace std;
@@ -82,6 +83,8 @@ public:
 
             detector.detectMarkers(frame, markerCorners, markerIds);
 
+            bool intruderDetected = false;
+
             if (markerIds.size() >= 4) {
                 cout << "Se detectaron " << markerIds.size() << " marcadores." << endl;
 
@@ -121,29 +124,53 @@ public:
                 }
                 fillConvexPoly(mask, pts, Scalar(255));
 
-                Mat safeArea;
-                frame.copyTo(safeArea, mask);
+                Rect safeArea = boundingRect(pts);
 
                 vector<uchar> buf;
-                imencode(".jpg", safeArea, buf);
+                imencode(".jpg", frame, buf);
                 int size = buf.size();
 
                 send(sock, (char*)&size, sizeof(int), 0);
                 send(sock, (char*)buf.data(), size, 0);
 
-                // Esperar la respuesta de Python
-                char response[256];
-                int response_size = recv(sock, response, 256, 0);
+                char response[1024];
+                int response_size = recv(sock, response, 1024, 0);
                 if (response_size > 0) {
                     response[response_size] = '\0';
                     cout << "Respuesta de Python: " << response << endl;
 
                     if (strcmp(response, "no_person_detected") != 0) {
-                        int x_min, y_min, x_max, y_max;
-                        sscanf_s(response, "%d,%d,%d,%d", &x_min, &y_min, &x_max, &y_max);
+                        vector<string> peopleCoordinates;
+                        stringstream ss(response);
+                        string coordinates;
 
-                        // Dibujar el cuadro en la imagen original
-                        rectangle(frame, Point(x_min, y_min), Point(x_max, y_max), Scalar(255, 0, 0), 2);
+                        while (getline(ss, coordinates, ';')) {
+                            peopleCoordinates.push_back(coordinates);
+                        }
+
+                        for (const string& person : peopleCoordinates) {
+                            int x_min, y_min, x_max, y_max;
+                            sscanf_s(person.c_str(), "%d,%d,%d,%d", &x_min, &y_min, &x_max, &y_max);
+
+                            Rect personRect(x_min, y_min, x_max - x_min, y_max - y_min);
+
+                            if (x_max >= safeArea.x && y_max >= safeArea.y &&
+                                x_min <= safeArea.x + safeArea.width &&
+                                y_min <= safeArea.y + safeArea.height) {
+                                
+                                intruderDetected = true;
+                                rectangle(frame, Point(x_min, y_min), Point(x_max, y_max), Scalar(255, 0, 0), 2);
+
+
+                                PlaySound(TEXT("alert.wav"), NULL, SND_FILENAME | SND_ASYNC);
+                            }
+                            else {
+                                cout << "Persona detectada fuera del área segura." << endl;
+                            }
+                        }
+                    }
+                    else {
+                        cout << "No se detectó ninguna persona." << endl;
                     }
                 }
             }
@@ -151,10 +178,15 @@ public:
                 cout << "No se detectaron suficientes marcadores en este frame." << endl;
             }
 
-            // Mostrar el video en tiempo real
+            if (intruderDetected) {
+                putText(frame, "Hay un intruso", Point(10, 30), FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 0, 255), 2);
+            }
+            else {
+                putText(frame, "No hay intrusos", Point(10, 30), FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 255, 0), 2);
+            }
+
             imshow("Video en tiempo real - Detección de Aruco", frame);
 
-            // Salir si se presiona la tecla 'q'
             if (waitKey(1) == 'q') {
                 break;
             }

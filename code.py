@@ -4,7 +4,6 @@ import numpy as np
 import tensorflow as tf
 import tensorflow_hub as hub
 
-# Configuración del socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind(('127.0.0.1', 8080))
 server_socket.listen(1)
@@ -13,7 +12,6 @@ print("Esperando conexión del cliente...")
 client_socket, addr = server_socket.accept()
 print(f"Conectado a {addr}")
 
-# Cargar el modelo preentrenado desde TensorFlow Hub
 model = hub.load("https://tfhub.dev/tensorflow/ssd_mobilenet_v2/2")
 
 def detect_people(image):
@@ -33,13 +31,24 @@ def detect_people(image):
 
     valid_boxes = person_boxes[person_scores > 0.5]
 
-    # Si se detecta una persona, devolver el primer cuadro
     if len(valid_boxes) > 0:
-        box = valid_boxes[0]  # Solo manejamos el primer cuadro detectado
         h, w, _ = image.shape
-        y_min, x_min, y_max, x_max = box
-        x_min, x_max, y_min, y_max = int(x_min * w), int(x_max * w), int(y_min * h), int(y_max * h)
-        return x_min, y_min, x_max, y_max
+
+        x_min_combined = w
+        y_min_combined = h
+        x_max_combined = 0
+        y_max_combined = 0
+
+        for box in valid_boxes:
+            y_min, x_min, y_max, x_max = box
+            x_min, x_max, y_min, y_max = int(x_min * w), int(x_max * w), int(y_min * h), int(y_max * h)
+            x_min_combined = min(x_min_combined, x_min)
+            y_min_combined = min(y_min_combined, y_min)
+            x_max_combined = max(x_max_combined, x_max)
+            y_max_combined = max(y_max_combined, y_max)
+
+
+        return [(x_min_combined, y_min_combined, x_max_combined, y_max_combined)]
     else:
         return None
 
@@ -61,14 +70,14 @@ while True:
 
     result = detect_people(frame)
     if result:
-        x_min, y_min, x_max, y_max = result
-        # Enviar las coordenadas de la persona detectada
-        response = f"{x_min},{y_min},{x_max},{y_max}"
+
+        coordinates_str = [f"{x_min},{y_min},{x_max},{y_max}" for x_min, y_min, x_max, y_max in result]
+        response = ";".join(coordinates_str)
     else:
-        # No se detectó ninguna persona
         response = "no_person_detected"
 
     client_socket.sendall(response.encode())
 
+# Cierre de la conexión
 client_socket.close()
 server_socket.close()

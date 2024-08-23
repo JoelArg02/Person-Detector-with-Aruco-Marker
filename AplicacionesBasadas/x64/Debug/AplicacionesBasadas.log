@@ -1,21 +1,21 @@
 ﻿  AplicacionesBasadas.cpp
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,49): warning C4244: 'argumento': conversión de 'const _Tp' a '_Tp'; posible pérdida de datos
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,49): warning C4244:         with
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,49): warning C4244:         [
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,49): warning C4244:             _Tp=float
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,49): warning C4244:         ]
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,49): warning C4244:         and
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,49): warning C4244:         [
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,49): warning C4244:             _Tp=int
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,49): warning C4244:         ]
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,43): warning C4244: 'argumento': conversión de 'const _Tp' a '_Tp'; posible pérdida de datos
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,43): warning C4244:         with
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,43): warning C4244:         [
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,43): warning C4244:             _Tp=float
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,43): warning C4244:         ]
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,43): warning C4244:         and
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,43): warning C4244:         [
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,43): warning C4244:             _Tp=int
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(120,43): warning C4244:         ]
-C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(129,26): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,49): warning C4244: 'argumento': conversión de 'const _Tp' a '_Tp'; posible pérdida de datos
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,49): warning C4244:         with
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,49): warning C4244:         [
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,49): warning C4244:             _Tp=float
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,49): warning C4244:         ]
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,49): warning C4244:         and
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,49): warning C4244:         [
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,49): warning C4244:             _Tp=int
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,49): warning C4244:         ]
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,43): warning C4244: 'argumento': conversión de 'const _Tp' a '_Tp'; posible pérdida de datos
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,43): warning C4244:         with
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,43): warning C4244:         [
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,43): warning C4244:             _Tp=float
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,43): warning C4244:         ]
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,43): warning C4244:         and
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,43): warning C4244:         [
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,43): warning C4244:             _Tp=int
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(124,43): warning C4244:         ]
+C:\Users\JOEL\source\repos\AplicacionesBasadas\AplicacionesBasadas\AplicacionesBasadas.cpp(134,26): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
   AplicacionesBasadas.vcxproj -> C:\Users\JOEL\source\repos\AplicacionesBasadas\x64\Debug\AplicacionesBasadas.exe

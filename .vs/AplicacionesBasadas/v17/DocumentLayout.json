@@ -17,11 +17,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AplicacionesBasadas.cpp",
+              "DocumentMoniker": "C:\\Users\\JOEL\\source\\repos\\AplicacionesBasadas\\AplicacionesBasadas\\AplicacionesBasadas.cpp",
+              "RelativeDocumentMoniker": "AplicacionesBasadas\\AplicacionesBasadas.cpp",
+              "ToolTip": "C:\\Users\\JOEL\\source\\repos\\AplicacionesBasadas\\AplicacionesBasadas\\AplicacionesBasadas.cpp*",
+              "RelativeToolTip": "AplicacionesBasadas\\AplicacionesBasadas.cpp*",
+              "ViewState": "AQIAAJcAAAAAAAAAAAAAAKYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-08-21T03:11:44.057Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -33,21 +46,7 @@
               "RelativeToolTip": "..\\..\\..\\..\\..\\opencv\\build\\include\\opencv2\\core\\matx.hpp",
               "ViewState": "AQIAADYCAAAAAAAAAAAswEkCAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-21T04:26:06.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AplicacionesBasadas.cpp",
-              "DocumentMoniker": "C:\\Users\\JOEL\\source\\repos\\AplicacionesBasadas\\AplicacionesBasadas\\AplicacionesBasadas.cpp",
-              "RelativeDocumentMoniker": "AplicacionesBasadas\\AplicacionesBasadas.cpp",
-              "ToolTip": "C:\\Users\\JOEL\\source\\repos\\AplicacionesBasadas\\AplicacionesBasadas\\AplicacionesBasadas.cpp",
-              "RelativeToolTip": "AplicacionesBasadas\\AplicacionesBasadas.cpp",
-              "ViewState": "AQIAAHwAAAAAAAAAAAAWwI8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-21T03:11:44.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-21T04:26:06.465Z"
             }
           ]
         }
