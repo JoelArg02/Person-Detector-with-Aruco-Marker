@@ -41,7 +41,9 @@ La aplicación requiere las siguientes bibliotecas y herramientas:
    - Abre el proyecto en Visual Studio y compílalo.
    - Asegúrate de que todas las dependencias estén correctamente configuradas.
 
-2. **Ejecución**:
+3. **Ejecución**:
+   - Ejecutar el archivo de Python con el modelo precargado de tensorflow hub
+   - Esperar a que nos indique que esta abierto a la espera de conexión del socket
    - Ejecuta el archivo binario generado.
    - La aplicación te pedirá que selecciones una cámara disponible.
    - Una vez seleccionada, la aplicación comenzará a capturar imágenes y a buscar marcadores Aruco en tiempo real.
