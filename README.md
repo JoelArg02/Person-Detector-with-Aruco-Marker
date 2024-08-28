@@ -1,4 +1,4 @@
-# Aruco Marker Detector
+# Person Detector with Aruco Marker (Only For Persons)
 
 Esta aplicación es un sistema de detección de marcadores Aruco que utiliza OpenCV para capturar imágenes de una cámara, detectar marcadores y enviar los datos a un servidor. Además, la aplicación detecta intrusos basándose en la posición de las personas dentro de un área segura definida por los marcadores Aruco, y reproduce un archivo de sonido `.wav` cuando se detecta un intruso.
 
