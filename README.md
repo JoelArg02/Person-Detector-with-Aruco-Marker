@@ -8,9 +8,10 @@ Para compilar y ejecutar esta aplicación, necesitarás:
 
 - **Windows** (ya que utiliza `PlaySound` y Winsock)
 - **Microsoft Visual Studio** (o cualquier compilador C++ compatible en Windows)
-- **OpenCV 4.x** con los módulos de contribución (para detección de Aruco)
+- **OpenCV 4.8** con los módulos de contribución (para detección de Aruco)
 - **Windows Media Player** (si se usa la versión con soporte MP3)
 - **Una cámara web** conectada al equipo
+- **Socket con el modelo precargado** se usa un modelo de tensorflor hub (ssd_mobilnet) en Python el cual se comunica por un socket
 
 ## Dependencias
 
@@ -24,7 +25,7 @@ La aplicación requiere las siguientes bibliotecas y herramientas:
 ## Instalación
 
 1. **Instalar OpenCV**:
-   - Descarga e instala OpenCV 4.x desde [aquí](https://opencv.org/releases/).
+   - Descarga e instala OpenCV 4.8 desde [aquí](https://opencv.org/releases/).
    - Configura las variables de entorno y enlaces en tu proyecto para que apunten a las bibliotecas y archivos de encabezado de OpenCV.
 
 2. **Configurar el proyecto en Visual Studio**:
@@ -32,7 +33,7 @@ La aplicación requiere las siguientes bibliotecas y herramientas:
    - Agrega los encabezados de OpenCV y las bibliotecas requeridas en las opciones de compilación.
 
 3. **Coloca los archivos de sonido**:
-   - Asegúrate de que el archivo de sonido `alert.wav` esté en el mismo directorio que el ejecutable o proporciona la ruta correcta en el código.
+   - Asegúrate de que el archivo de sonido `alarma.wav` esté en el mismo directorio que el ejecutable o proporciona la ruta correcta en el código.
 
 ## Uso
 
@@ -45,17 +46,14 @@ La aplicación requiere las siguientes bibliotecas y herramientas:
    - La aplicación te pedirá que selecciones una cámara disponible.
    - Una vez seleccionada, la aplicación comenzará a capturar imágenes y a buscar marcadores Aruco en tiempo real.
    - Si se detectan suficientes marcadores, se definirá un área segura.
-   - Si una persona es detectada dentro del área segura, la aplicación enviará una alerta al servidor y reproducirá el sonido `alert.wav`.
+   - Si una persona es detectada dentro del área segura, la aplicación enviará una alerta al servidor y reproducirá el sonido `alarma.wav`.
 
-## Personalización
-
-- **Reproducir MP3 en lugar de WAV**: Si deseas utilizar un archivo `.mp3` en lugar de `.wav`, consulta el código fuente para la implementación de `Windows Media Player`.
-- **Cambiar el sonido de alerta**: Puedes reemplazar el archivo `alert.wav` con cualquier otro archivo de sonido `.wav` de tu elección.
 
 ## Limitaciones
 
 - Esta aplicación está diseñada para sistemas Windows debido al uso de APIs específicas como `PlaySound` y Winsock.
 - Solo soporta archivos de sonido en formato `.wav`. Para soporte de MP3, es necesario agregar dependencias adicionales.
+- Reconocimiento de personas muy lento, lo mejor seria usar la GPU para el modelo
 
 ## Contribuciones
 
